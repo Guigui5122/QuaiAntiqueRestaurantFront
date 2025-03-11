@@ -1,11 +1,13 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
+RewriteEngine On
 
-    # Si le fichier ou dossier n'existe pas...
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
+# Définir la racine du projet
+RewriteBase /
 
-    # ...alors renvoie index.html
-    RewriteRule ^ index.html [QSA,L]
-</IfModule>
+# Laisser Apache gérer les fichiers HTML, CSS, JS et images
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Si le fichier ou dossier n'existe pas, rediriger vers index.php (ou index.html)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
