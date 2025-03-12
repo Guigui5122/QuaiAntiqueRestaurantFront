@@ -4,19 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- insertion du Google Font Hind Madurai dans le Head-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Hind+Madurai:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+        <!-- Lien vers le CSS compilé scss-->
     <link rel="stylesheet" href="scss/main.css" />
     <title> Restaurant Le Quai Antique </title>
 </head>
 
 <body>
     <header>
+        <!-- Création de la navbar avec Boostrap -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Quai Antique</a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,15 +49,32 @@
         </div>
       </nav> 
     </header>
-
+    <!-- Routage avec JS (voir fichiers : router.js | allRoutes.js | Route.js  dans le dossier Router )-->
     <main id="main-page">
         <!-- Contenun de la page sera injecté ici-->
     </main>
 
-    <footer> Le footer de mon site </footer>
+<!-- Création du Footer en Boostrap Grid-->
+    <footer class="bg-dark text-white text-center footer">
+        <div class="row"><!-- création de la ligne-->
+            <div class="col-12 col-lg-4"> <!-- *col-12* prend tout l'écran tandis que *col-lg-4* s'adaptera à 4colonnes en responsive-->
+                <h3 class="text-primary">Nos horaires</h3>
+                <p>Du mardi au dimanche  12:00-14:00  18:00-23:00</p>
+            </div>
+            <div class="col-6 col-lg-4">
+                <p>Quai Antique <br/>
+                    5 rue de la route <br/>
+                    31150 Ville <br/>
+                    04 01 01 01 01 <br/>
+                </p>
+            </div>
+            <div class="col-6 col-lg-4">
+                <p>contact@quaiantique.com</p>
+            </div>
+        </div>
+    </footer>
 
     <script type="module" src="Router/router.js"></script>
-    <button class="btn btn-primary">Cliquez ici</button>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
