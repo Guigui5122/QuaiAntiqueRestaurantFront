@@ -1,0 +1,37 @@
+# Projet Restaurant "Quai Antique"
+
+
+#Paramétrage du projet QuaiAntique 
+    1. Paramétrage projet et environnement
+	1. Le dossier projet "QuaiAntiqueRestaurant" est créé dans : c:/Wamp64/www/ 
+	2. Dans VSCODE : création des pages principales (index.html / home.html/ 404.html)
+
+#Installation des routes via JS (node_modules) & Git/GitHub
+	3. Ajout de la Navigation via JS, en créant les pages : Route.js / router.js / allRoutes.js
+	4. Mise en place du Repository GIT / GITHUB (+ tests)
+	5. Configuration des fichiers .htaccess / httpd-vhosts.conf / hosts
+	6. Tests de la navigation et du repository
+
+#Installation de Boostrap et SAAS (et plug-in Live SASS Compiler)
+	7. Ajout de Bootstrap & bootstrap icons (via "*npm install bootstrap / npm i bootstrap-icons*" à la racine du projet)
+		> ajout des liens "link href bootstrap" dans le header
+    8. Téléchargement de l'extension VS = Live Sass Compiler
+	    qui permet de compiler le fichier scss en css (via le bouton en bas de page : Watching)
+    9. Créer un dossier SCSS :
+	Dans ce dossier seront créés automatiquement, dès la 1ere compilation SCSS to CSS ces 3  fichiers : main.css / main.scss.map / main.scss
+	
+	**On peut créer du style dans le fichier MAIN.SCSS**
+    10. Lier le fichier à la page index : <link rel="stylesheet" href ="scss/main.css"/>
+    11. Création d'un fichier "_custom.scss"
+	    !! Le underscore ""  devant le fichier permet de définir que ce fichier ne sera pas compilé
+    12. Modification des couleurs primaires BOOTSTRAP :
+	    Redéfinir les changement de couleur dans le fichier _custom.scss :
+	==(par exemple ):==
+	==$primary: #906427;==
+	==$secondary : #B6AC97;==
+	==$dark : #392C1E;==
+	==$black : #292222;==
+	    Elles seront prises en compte dans les paramètres Boostrap!
+        
+        IDEM pour les FONTS qui peuvent être définit dans "_custom"
+# Création des éléments HEADER / FOOTER / NAV 
