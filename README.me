@@ -55,3 +55,34 @@ par exemple :
 p{
     font-family: $font-family-serif;
 }
+
+#BIGTITLE
+Création du BigTitle
+ajout de l'image dans le css avec background-image, reglage de la position, de la hauteur, et du filtre :
+//création du CSS Bigtitle (voir bloc css ci-dessous)
+.hero-scene{
+    position: relative;
+    &::before{
+        content:"";
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height:100%;
+        background-image: url(../images/pork.jpg);
+        background-size: cover;
+        filter: brightness(0.3);
+    }
+    //positionne les éléments devant le ::before 
+    *{
+        position:relative;
+    }
+    //réglage de la hauteur du bloc et mise en display flex du contenu afin d'avoir les éléments centrés, en colonnes au centre du BigTitle! 
+    .hero-scene-content{
+        height:300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
