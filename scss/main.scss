@@ -23,7 +23,10 @@ footer.footer{
     bottom: 0;
     width:100%;
 }
-
+body {
+    padding-bottom: 20px; /* Ajuste en fonction de la hauteur de ton footer */
+  }
+  
 
 p{
     font-family: $font-family-serif;
@@ -32,6 +35,7 @@ p{
 //création du CSS Bigtitle
 .hero-scene{
     position: relative;
+    margin-bottom: 15px;
     &::before{
         content:"";
         position: absolute;
@@ -107,3 +111,14 @@ li{
     padding: 3px;
     margin-left: 0;
 }
+
+.form-label{
+    color: $primary;
+}
+
+::placeholder {
+    color:$secondary;
+    font-size: 1em;
+    opacity: 65%;
+  }
+  

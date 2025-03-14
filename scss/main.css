@@ -11990,6 +11990,10 @@ footer.footer {
   width: 100%;
 }
 
+body {
+  padding-bottom: 20px; /* Ajuste en fonction de la hauteur de ton footer */
+}
+
 p {
   font-family: "Hind Madurai", serif;
   font-size: 18px;
@@ -11997,6 +12001,7 @@ p {
 
 .hero-scene {
   position: relative;
+  margin-bottom: 15px;
 }
 .hero-scene::before {
   content: "";
@@ -12066,4 +12071,20 @@ li {
   list-style-type: none;
   padding: 3px;
   margin-left: 0;
+}
+
+.form-label {
+  color: #906427;
+}
+
+::-moz-placeholder {
+  color: #B6AC97;
+  font-size: 1em;
+  opacity: 65%;
+}
+
+::placeholder {
+  color: #B6AC97;
+  font-size: 1em;
+  opacity: 65%;
 }/*# sourceMappingURL=main.css.map */
