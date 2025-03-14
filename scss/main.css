@@ -12026,6 +12026,22 @@ p {
 
 /* Style de la page Galerie : filtre, transition sur les images et textes*/
 .image-card {
+  height: auto; /* Permet l’adaptation fluide */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-card img {
+  width: 100%; /* Garde la largeur pleine */
+  aspect-ratio: 16/9; /* Garde un ratio paysage */
+  -o-object-fit: cover;
+     object-fit: cover; /* Coupe l’image pour remplir l’espace */
+}
+
+.image-card {
   position: relative;
 }
 .image-card:hover .titre-image {

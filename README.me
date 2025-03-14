@@ -90,3 +90,18 @@ ajout de l'image dans le css avec background-image, reglage de la position, de l
 #HOMEPAGE contenu
 il y aura 3 blocs : Bienvenue au Quai Antique / Des produits frais / Réservation en ligne
 dans chaque bloc, il y aura un titre, une image, un paragraphe et un bouton, soit sur un fond foncé ou clair, alternativement 
+
+//Dans le code ci-dessous la class "row" créée une ligne "row-cols-2" permet d'y insérer 2 colonnes,
+// puis "row-cols-lg-3" permet de redimensionner lorsque que l'on dépasse le Breakpoint "lg" soit lorsque la taille est >= à 992px. 
+
+// la class="col p-3" ajoute un padding
+//la class="w-100" permet de dimensionner l'image en Width 100% du container
+
+<div class="container">
+            <div class="row row-cols-2 row-cols-lg-3"> 
+                <div class="col p-3">
+                    <div class="image-card text-white">
+                        <img class="w-100 rounded" src="../images/seafood.jpg" alt="plat de poisson frais">
+                        <p class="titre-image"> Titre image 1</p>
+                    </div>
+                </div>
