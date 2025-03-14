@@ -35,13 +35,15 @@
         
         IDEM pour les FONTS qui peuvent être définit dans "_custom"
 
-# Création des éléments HEADER / FOOTER / NAV 
+# Création des éléments HEADER / FOOTER / NAV dans INDEX.HTML ou sera injecté le contenu via le router.js
 #HEADER
+
     - utilisation de la navbar bootstrap (récupération du code s/ le site Boostrap)
     - modification de la couleur du background ("navbar-dark bg-dark") et 
     du margin ME (Margin End) en MS (Margin Start) pour décaler les éléments du menu à droite : "navbar-nav ms-auto mb-2 mb-lg-0"
 
-#FOOTER (ok commit)
+#FOOTER 
+
 Création de 3 blocs (nos horaires / adresse / mail) en Boostrap Grid
 avec du responsive lorsque l'on bascule sur un écran plus petit
 les élément seront de : Horaire en col-12 / Adresse en col-6 / Mail en col-6
@@ -57,6 +59,7 @@ p{
 }
 
 #BIGTITLE
+
 Création du BigTitle
 ajout de l'image dans le css avec background-image, reglage de la position, de la hauteur, et du filtre :
 //création du CSS Bigtitle (voir bloc css ci-dessous)
@@ -88,8 +91,19 @@ ajout de l'image dans le css avec background-image, reglage de la position, de l
 }
 
 #HOMEPAGE contenu
+
 il y aura 3 blocs : Bienvenue au Quai Antique / Des produits frais / Réservation en ligne
 dans chaque bloc, il y aura un titre, une image, un paragraphe et un bouton, soit sur un fond foncé ou clair, alternativement 
+
+
+
+#GALERIE 
+
+!!!! A CHAQUE AJOUT DE PAGE, il faut définir le chemin dans AllRoutes.js :
+new Route("/galerie", "La galerie", "pages/galerie.html"),
+
+1- Création de la page Galerie avec le même bigtitle, modifier en enlevant le texte et le bouton.
+2- Création de la <section> qui condiendra les images, en utilisant Bootstrap Grid :
 
 //Dans le code ci-dessous la class "row" créée une ligne "row-cols-2" permet d'y insérer 2 colonnes,
 // puis "row-cols-lg-3" permet de redimensionner lorsque que l'on dépasse le Breakpoint "lg" soit lorsque la taille est >= à 992px. 
@@ -105,3 +119,33 @@ dans chaque bloc, il y aura un titre, une image, un paragraphe et un bouton, soi
                         <p class="titre-image"> Titre image 1</p>
                     </div>
                 </div>
+
+// pour dimensionner toutes les images à la même taille, il a fallu jouer 
+sur les propriétés du container "image-card" et "image-card img" :
+
+.image-card {
+    height: auto; /* Permet l’adaptation fluide */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-card img {
+    width: 100%; /* Garde la largeur pleine */
+    aspect-ratio: 16 / 9; /* Garde un ratio paysage */
+    object-fit: cover; /* Coupe l’image pour remplir l’espace */
+}
+
+#CARTE
+Création de la page Carte
+
+!!!! A CHAQUE AJOUT DE PAGE, il faut définir le chemin dans AllRoutes.js :
+new Route("/galerie", "La galerie", "pages/galerie.html"),
+    new Route("/carte", "La Carte", "pages/carte.html"),
+
+1- ajout du BigTitle
+2- ajout des sectionsCarte (Entrees Plats Desserts)
+3- ajout du texte en Liste
+

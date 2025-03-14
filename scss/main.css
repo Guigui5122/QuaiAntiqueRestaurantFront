@@ -12060,4 +12060,10 @@ p {
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: all 0.3s;
+}
+
+li {
+  list-style-type: none;
+  padding: 3px;
+  margin-left: 0;
 }/*# sourceMappingURL=main.css.map */
