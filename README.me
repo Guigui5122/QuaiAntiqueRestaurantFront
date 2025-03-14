@@ -35,6 +35,10 @@
         
         IDEM pour les FONTS qui peuvent être définit dans "_custom"
 
+#INDEX (index.html)
+Cette page sert de base au projet et permet de maintenir une barre nav et un footer
+identique sur toutes les pages, et en y insérant le contenu dans le bloc <main-page>
+
 # Création des éléments HEADER / FOOTER / NAV dans INDEX.HTML ou sera injecté le contenu via le router.js
 #HEADER
 
@@ -97,7 +101,7 @@ dans chaque bloc, il y aura un titre, une image, un paragraphe et un bouton, soi
 
 
 
-#GALERIE 
+#GALERIE (galerie.html)
 
 !!!! A CHAQUE AJOUT DE PAGE, il faut définir le chemin dans AllRoutes.js :
 new Route("/galerie", "La galerie", "pages/galerie.html"),
@@ -138,14 +142,54 @@ sur les propriétés du container "image-card" et "image-card img" :
     object-fit: cover; /* Coupe l’image pour remplir l’espace */
 }
 
-#CARTE
+#CARTE (carte.html)
 Création de la page Carte
 
 !!!! A CHAQUE AJOUT DE PAGE, il faut définir le chemin dans AllRoutes.js :
-new Route("/galerie", "La galerie", "pages/galerie.html"),
     new Route("/carte", "La Carte", "pages/carte.html"),
 
 1- ajout du BigTitle
 2- ajout des sectionsCarte (Entrees Plats Desserts)
 3- ajout du texte en Liste
 
+#CONNEXION (signin.html)
+
+Création de la page connexion avec l'utilisation d'un formaulaire Bootstrap (récupérer en ligne),
+ puis modifier pour correspondre à nos besoins :
+
+//extrait code bootstrap original (avant modification)//
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+//
+
+#INSCRIPTION (signup.html)
+
+Création de la page "inscription", en dupliquant la page Connexion et en rajoutant des élements au formulaire 
+(Nom / Prenom / Validez votre mot de passe)
+
+#MON COMPTE (account.html)
+
+Création de la page "mon compte" en dupliquant la page Inscription et en rajoutant des élements au formulaire 
+(Allergies / Nb Convives / Modifier vos informations)
++ ajout des bouton valider et supprimer mon compte
++ lien vers une nouvelle page :
+
+#CHANGEMENT DE MOT DE PASSE (editPassword.html)
+
+Permet à l'utilisateur de changer son mot de passe
++ un bouton pour revenir sur son compte
