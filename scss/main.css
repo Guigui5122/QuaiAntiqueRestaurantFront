@@ -12095,4 +12095,10 @@ li {
   color: #B6AC97;
   font-size: 1em;
   opacity: 65%;
+}
+
+.allReservation a {
+  display: block;
+  color: #292222;
+  padding: 10px;
 }/*# sourceMappingURL=main.css.map */
