@@ -103,7 +103,7 @@ dans chaque bloc, il y aura un titre, une image, un paragraphe et un bouton, soi
 
 #GALERIE (galerie.html)
 
-!!!! A CHAQUE AJOUT DE PAGE, il faut définir le chemin dans AllRoutes.js :
+⚠️ A CHAQUE AJOUT DE PAGE, il faut définir le chemin dans AllRoutes.js :
 new Route("/galerie", "La galerie", "pages/galerie.html"), et ajouter le lien dans le code <a href:"/galerie">
 
 1- Création de la page Galerie avec le même bigtitle, modifier en enlevant le texte et le bouton.
@@ -146,17 +146,18 @@ sur les propriétés du container "image-card" et "image-card img" :
 - ajout des boutons dans des DIV =
 
                         <div class="action-image-buttons">
-                            <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square"></i></button>
-                            <button type="button" class="btn btn-outline-light"><i class="bi bi-trash"></i></button>
+                          👉  <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square"></i></button>
+                           👉 <button type="button" class="btn btn-outline-light"><i class="bi bi-trash"></i></button>
+
 - ajout de style dans .image-card(qui est le container) pour gérer la transparence, +l'alignement (display:flex + justify-content: space-between) =
 
 .image-card{
     position:relative;
     &:hover{
         .titre-image,
-        .action-image-buttons{            // ici on rajoute la class ".actions-image-buttons" pour le hover
+        .action-image-buttons{            // 👉ici on rajoute la class ".actions-image-buttons" pour le hover
 
-    .action-image-buttons{                // plus bas dans le main.scss, on ajoute le style des boutons
+    .action-image-buttons{                // 👉plus bas dans le main.scss, on ajoute le style des boutons
         position: absolute;
         top: 0;
         left: 0;
@@ -170,12 +171,28 @@ sur les propriétés du container "image-card" et "image-card img" :
 // Ajout Modal (édition photo)
 1/ on ajout des proprités Bootstrap à notre bouton déjà créé: "Ajouter une photo" =
 data-bs-toggle="modal" data-bs-target=#editionPhotoModal
+2/ ajout des propriétés Bootstrap aux boutons Trash et Pencil =
+
+        <button type="button" class="btn btn-outline-light" 👉data-bs-toggle="modal" 👉data-bs-target="#editionPhotoModal"><i class="bi bi-pencil-square"></i></button>
+        <button type="button" class="btn btn-outline-light" 👉data-bs-toggle="modal" 👉data-bs-target="#deletePhotoModal"><i class="bi bi-trash"></i></button>
+
+3/ Création des modals Edition et Suppression =
+
+voir Galerie.hmtl =
+<!-- Modal edition -->
+<!-- Modal suppression -->
+
+
+
+
+
+
 
 
 #CARTE (carte.html)
 Création de la page Carte
 
-!!!! A CHAQUE AJOUT DE PAGE, il faut définir le chemin dans AllRoutes.js :
+⚠️ A CHAQUE AJOUT DE PAGE, il faut définir le chemin dans AllRoutes.js :
     new Route("/carte", "La Carte", "pages/carte.html"),
 
 1- ajout du BigTitle

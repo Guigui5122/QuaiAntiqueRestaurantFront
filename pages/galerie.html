@@ -67,6 +67,10 @@
 </section>
 
 <!-- Modal edition -->
+
+<!--ci-dessous la propriété TABINDEX empêche la modal d’être ciblée par Tab lorsqu'elle est cachée.
+Permet de lui donner le focus par JavaScript une fois affichée ($('#exampleModal').focus()).-->
+
 <div class="modal fade" id="editionPhotoModal" tabindex="-1" aria-labelledby="editionPhotoModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
@@ -80,7 +84,7 @@
                     <div class="mb-3">
                         <label for="namePhotoInput" class="form-label">Titre</label>
                         <input type="text" class="form-control" id="namePhotoInput"
-                            placeholder="Lasagne à la bolognese">
+                            placeholder=" ici Titre de la photo !">
                     </div>
                     <div class="mb-3">
                         <label for="imageInput" class="form-label"> Image</label>
