@@ -12101,4 +12101,9 @@ li {
   display: block;
   color: #292222;
   padding: 10px;
+}
+
+.action-menu-buttons {
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=main.css.map */

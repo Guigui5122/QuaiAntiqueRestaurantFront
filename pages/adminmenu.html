@@ -1,0 +1,135 @@
+<div class="hero-scene text-center text-white">
+    <div class=" hero-scene-content">
+        <h3> Gestion de la carte </h3>
+    </div>
+</div>
+
+<section>
+    <div class="container pt-5 mb-5">
+        <div class="row row-cols-2 row-cols-lg-3">
+            <div class="col p-3">
+                <h4 class="titreCarte text-center"> Les Entrées 🍽️</h4>
+                <ul class="listCarte pt-4 text-primary text-center">
+                    <li> Lorem ipsum dolor sit amet consectetur</li>
+                    <li> Reiciendis tempora, nemo totam sed </li>
+                    <li> Adipisci aut porro atque autem </li>
+                    <li> Amet consectetur adipisicing elit</li>
+                    <li> Excepturi atque autem voluptatum</li>
+                    <li> Obcaecati dolorem magnam illum</li>
+                </ul>
+                <div class="action-menu-buttons">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#editionEntreeModal"><i class="bi bi-pencil-square"> Modifier les Entrées </i></button>
+                </div>
+            </div>
+            <div class="col p-3">
+                <h4 class="titreCarte text-center"> Les Plats 🍲</h4>
+                <ul class="listCarte pt-4 text-primary text-center">
+                    <li> Lorem ipsum dolor sit amet consectetur</li>
+                    <li> Reiciendis tempora, nemo totam sed </li>
+                    <li> Adipisci aut porro atque autem </li>
+                    <li> Amet consectetur adipisicing elit</li>
+                    <li> Excepturi atque autem voluptatum</li>
+                    <li> Obcaecati dolorem magnam illum</li>
+                </ul>
+                <div class="action-menu-buttons">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#editionPlatModal"><i class="bi bi-pencil-square"> Modifier les Plats </i></button>
+                </div>
+
+            </div>
+            <div class="col p-3">
+                <h4 class="titreCarte text-center"> Les Desserts 🍰 </h4>
+                <ul class="listCarte pt-4 text-primary text-center">
+                    <li> Lorem ipsum dolor sit amet consectetur</li>
+                    <li> Reiciendis tempora, nemo totam sed </li>
+                    <li> Adipisci aut porro atque autem </li>
+                    <li> Amet consectetur adipisicing elit</li>
+                    <li> Excepturi atque autem voluptatum</li>
+                    <li> Obcaecati dolorem magnam illum</li>
+                </ul>
+                <div class="action-menu-buttons">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#editionDessertModal"><i class="bi bi-pencil-square"> Modifier les Desserts </i></button>
+                </div>
+
+            </div>
+        </div>
+    </div>             
+</section>
+
+<!-- Modal Modification des Entrees -->
+<div class="modal fade" id="editionEntreeModal" tabindex="-1" aria-labelledby="editionEntreeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="editionEntreeModalLabel">  Modifier les Entrées </h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="newEntreeText" class="col-form-label"> Nouvelle entrée:</label>
+                        <textarea class="form-control" id="newEntreeText"></textarea>
+                      </div>
+                    <div class="mb-3">
+                            <div class="text-center pt-3">
+                            <button type="button" class="btn btn-primary"> Ajouter </button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Terminer </button>
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Modification des Plats -->
+<div class="modal fade" id="editionPlatModal" tabindex="-1" aria-labelledby="editionPlatModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="editionPlatModalLabel">  Modifier les Plats </h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="newPlatText" class="col-form-label"> Nouveau Plat:</label>
+                        <textarea class="form-control" id="newPlatText"></textarea>
+                      </div>
+                    <div class="mb-3">
+                            <div class="text-center pt-3">
+                            <button type="button" class="btn btn-primary"> Ajouter </button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Terminer </button>
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Modification des Desserts -->
+<div class="modal fade" id="editionDessertModal" tabindex="-1" aria-labelledby="editionDessertModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="editionDessertModalLabel">  Modifier les Desserts </h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="newDessertText" class="col-form-label"> Nouveau Dessert:</label>
+                        <textarea class="form-control" id="newDessertText"></textarea>
+                      </div>
+                    <div class="mb-3">
+                            <div class="text-center pt-3">
+                            <button type="button" class="btn btn-primary"> Ajouter </button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Terminer </button>
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
