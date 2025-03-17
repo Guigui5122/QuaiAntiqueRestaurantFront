@@ -104,7 +104,7 @@ dans chaque bloc, il y aura un titre, une image, un paragraphe et un bouton, soi
 #GALERIE (galerie.html)
 
 !!!! A CHAQUE AJOUT DE PAGE, il faut définir le chemin dans AllRoutes.js :
-new Route("/galerie", "La galerie", "pages/galerie.html"),
+new Route("/galerie", "La galerie", "pages/galerie.html"), et ajouter le lien dans le code <a href:"/galerie">
 
 1- Création de la page Galerie avec le même bigtitle, modifier en enlevant le texte et le bouton.
 2- Création de la <section> qui condiendra les images, en utilisant Bootstrap Grid :
@@ -142,6 +142,34 @@ sur les propriétés du container "image-card" et "image-card img" :
     object-fit: cover; /* Coupe l’image pour remplir l’espace */
 }
 
+// Ajout des boutons Edit et Suppression d'images pour le mode Administrateur
+- ajout des boutons dans des DIV =
+
+                        <div class="action-image-buttons">
+                            <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square"></i></button>
+                            <button type="button" class="btn btn-outline-light"><i class="bi bi-trash"></i></button>
+- ajout de style dans .image-card(qui est le container) pour gérer la transparence, +l'alignement (display:flex + justify-content: space-between) =
+
+.image-card{
+    position:relative;
+    &:hover{
+        .titre-image,
+        .action-image-buttons{            // ici on rajoute la class ".actions-image-buttons" pour le hover
+
+    .action-image-buttons{                // plus bas dans le main.scss, on ajoute le style des boutons
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        opacity: 0;
+        transition: all 0.3s;
+
+
+
+
 #CARTE (carte.html)
 Création de la page Carte
 
@@ -154,8 +182,8 @@ Création de la page Carte
 
 #CONNEXION (signin.html)
 
-Création de la page connexion avec l'utilisation d'un formaulaire Bootstrap (récupérer en ligne),
- puis modifier pour correspondre à nos besoins :
+Création de la page connexion avec l'utilisation d'un formulaire Bootstrap (récupérer en ligne),
+ puis modification de la page pour correspondre à nos besoins :
 
 //extrait code bootstrap original (avant modification)//
 <form>
