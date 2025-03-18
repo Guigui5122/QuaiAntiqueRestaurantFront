@@ -26,7 +26,7 @@ function validateRequired(input){
     }
     else{
         input.classList.remove("is-valid");
-        input.classList.add("is-valid");
+        input.classList.add("is-invalid");
     }
 }
 
