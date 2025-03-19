@@ -2,35 +2,36 @@
 
 
 #Paramétrage du projet QuaiAntique 
-    1. Paramétrage projet et environnement
-	1. Le dossier projet "QuaiAntiqueRestaurant" est créé dans : c:/Wamp64/www/ 
-	2. Dans VSCODE : création des pages principales (index.html / home.html/ 404.html)
+  1. Paramétrage projet et environnement
+	2. Le dossier projet "QuaiAntiqueRestaurant" est créé dans : c:/Wamp64/www/ 
+	3. Dans VSCODE : création des pages principales (index.html / home.html/ 404.html)
 
 #Installation des routes via JS (node_modules) & Git/GitHub
-	3. Ajout de la Navigation via JS, en créant les pages : Route.js / router.js / allRoutes.js
-	4. Mise en place du Repository GIT / GITHUB (+ tests)
-	5. Configuration des fichiers .htaccess / httpd-vhosts.conf / hosts
-	6. Tests de la navigation et du repository
+	4. Ajout de la Navigation via JS, en créant les pages : Route.js / router.js / allRoutes.js
+	5. Mise en place du Repository GIT / GITHUB (+ tests)
+	6. Configuration des fichiers .htaccess / httpd-vhosts.conf / hosts
+	7. Tests de la navigation et du repository
 
 #Installation de Boostrap et SAAS (et plug-in Live SASS Compiler)
-	7. Ajout de Bootstrap & bootstrap icons (via "*npm install bootstrap / npm i bootstrap-icons*" à la racine du projet)
+	8. Ajout de Bootstrap & bootstrap icons (via "*npm install bootstrap / npm i bootstrap-icons*" à la racine du projet)
 		> ajout des liens "link href bootstrap" dans le header
-    8. Téléchargement de l'extension VS = Live Sass Compiler
+  9. Téléchargement de l'extension VS = Live Sass Compiler
 	    qui permet de compiler le fichier scss en css (via le bouton en bas de page : Watching)
-    9. Créer un dossier SCSS :
+  10. Créer un dossier SCSS :
 	Dans ce dossier seront créés automatiquement, dès la 1ere compilation SCSS to CSS ces 3  fichiers : main.css / main.scss.map / main.scss
 	
 	**On peut créer du style dans le fichier MAIN.SCSS**
-    10. Lier le fichier à la page index : <link rel="stylesheet" href ="scss/main.css"/>
-    11. Création d'un fichier "_custom.scss"
+  11. Lier le fichier à la page index : <link rel="stylesheet" href ="scss/main.css"/>
+  12. Création d'un fichier "_custom.scss"
 	    !! Le underscore ""  devant le fichier permet de définir que ce fichier ne sera pas compilé
-    12. Modification des couleurs primaires BOOTSTRAP :
+  13. Modification des couleurs primaires BOOTSTRAP :
 	    Redéfinir les changement de couleur dans le fichier _custom.scss :
 	==(par exemple ):==
 	==$primary: #906427;==
 	==$secondary : #B6AC97;==
 	==$dark : #392C1E;==
 	==$black : #292222;==
+  
 	    Elles seront prises en compte dans les paramètres Boostrap!
         
         IDEM pour les FONTS qui peuvent être définit dans "_custom"
@@ -224,12 +225,14 @@ Création de la page connexion avec l'utilisation d'un formulaire Bootstrap (ré
 Création de la page "inscription", en dupliquant la page Connexion et en rajoutant des élements au formulaire 
 (Nom / Prenom / Validez votre mot de passe)
 
+
 #MON COMPTE (account.html)
 
 Création de la page "mon compte" en dupliquant la page Inscription et en rajoutant des élements au formulaire 
 (Allergies / Nb Convives / Modifier vos informations)
 + ajout des bouton valider et supprimer mon compte
-+ lien vers une nouvelle page :
++ lien vers une nouvelle page : editPassword.html
+
 
 #CHANGEMENT DE MOT DE PASSE (editPassword.html)
 
@@ -287,3 +290,36 @@ voir le détails en commentaire sur la page "reserver.html"
 Permet de gérer l'édition de la carte : ajout de 3 modals pour Entrée / Plat / Dessert
 Le Modal permet la saisie de texte (intitulé du nouveau plat) de choisir d'AJOUTER ou TERMINER l'opération.
 
+
+#CREATION D'UN FICHIER JS (signup.js)
+Ce fichier sert à contrôler le formulaire d'inscription, notamment le contrôle des champs. Renvoyer des messages d'erreur si le champ est non conforme
+
+1/ On recupère les Input
+👉 const inputNom = document.getElementById("nomInput");
+
+2/ On ajoute une action a realiser avec "addEventListener" , ici "keyup" sert a lancer l'action dès que l'utilisateur relâche la touche du clavier !
+👉 inputNom.addEventListener("keyup", validateForm);
+
+3/ On crée une fonction pour contrôler la validité du formulaire 
+👉 function validateForm(){
+    const nomOk = validateRequired(inputNom);
+    }
+
+4/ Dans cette fonction on définit, si le bouton "Inscription" est activer ou désactiver, en ayant pris le soion de rajouter un ID à notre bouton 
+👉 id="btn-validationinscription"
+
+ 👉if(nomOk && prenomOk && mailOk && passwordOk){
+        btnValidation.disabled = false;
+    }
+    else{
+        btnValidation.disabled = true;
+    }
+5/ on reproduit ces étapes pour le prenom, le mail , le mot de passe en utilisant un contrôle de forme pour le mail et le mot de passe (REGEX) :
+👉 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+👉 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/;
+
+6/ Dans le formulaire (signup.html) on ajoute une <DIV + CLASS bootstrap>, qui affichera un message lorsque le champ est invalide, cela donne des indications à l'utilisateur :
+
+👉 <div class="invalid-feedback">
+                Le mot de passe n'est pas assez robuste : Au moins 8 caractères, comprenant au moins une minuscule, une majuscule, un chiffre, et un caractère spécial
+            </div>

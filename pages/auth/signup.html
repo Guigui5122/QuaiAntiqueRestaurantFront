@@ -11,22 +11,40 @@
         <div class="mb-3">
             <label for="nomInput" class="form-label">Nom</label>
             <input type="text" class="form-control" id="nomInput" placeholder="Votre Nom">
+            <div class="invalid-feedback">
+                Le nom est requis
+            </div>
         </div>
         <div class="mb-3">
             <label for="prenomInput" class="form-label">Prénom</label>
             <input type="text" class="form-control" id="prenomInput" placeholder="Votre prénom">
+            <div class="invalid-feedback">
+                Le prénom est requis
+            </div>
         </div>
         <div class="mb-3">
             <label for="emailInput" class="form-label">E-mail</label>
             <input type="email" class="form-control" id="emailInput" placeholder="Votre E-mail">
+            <div class="invalid-feedback">
+                Le mail n'est pas au bon format
+            </div>
         </div>
         <div class="mb-3">
             <label for="passwordInput" class="form-label"> Saisir votre mot de passe</label>
             <input type="password" class="form-control" id="passwordInput" placeholder="•••••••••••••">
+            <div class="invalid-feedback">
+                Le mot de passe n'est pas assez robuste : Au moins 8 caractères, comprenant au moins une minuscule, une majuscule, un chiffre, et un caractère spécial
+            </div>
+            <div class="valid-feedback">
+                Le mot de passe est robuste ! Félicitations !
+            </div>
         </div>
         <div class="mb-3">
-            <label for="validatePasswordInput" class="form-label"> Validez votre mot de passe</label>
+            <label for="validatePasswordInput" class="form-label"> Confirmez votre mot de passe</label>
             <input type="password" class="form-control" id="validatePasswordInput" placeholder="•••••••••••••">
+            <div class="invalid-feedback">
+                La confirmation n'est pas identique au mot de passe
+            </div>
         </div>
         <div class="text-center">
             <button type="submit" class="btn btn-primary" id="btn-validationinscription"> Inscription</button>
