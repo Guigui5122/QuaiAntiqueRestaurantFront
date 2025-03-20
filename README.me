@@ -292,6 +292,11 @@ Le Modal permet la saisie de texte (intitulé du nouveau plat) de choisir d'AJOU
 
 
 #CREATION D'UN FICHIER JS (signup.js)
+⚠️ Le fichier JS est une page JS, il faut donc l'ajouter en 4ème arguments dans le fichier "allRoutes.js" 
+ sur la ligne "new Route" lié à la page HTML en question = 
+
+    new Route("/signup", "Inscription", "pages/auth/signup.html", "js/auth/signup.js"),
+
 Ce fichier sert à contrôler le formulaire d'inscription, notamment le contrôle des champs. Renvoyer des messages d'erreur si le champ est non conforme
 
 1/ On recupère les Input
@@ -323,3 +328,13 @@ Ce fichier sert à contrôler le formulaire d'inscription, notamment le contrôl
 👉 <div class="invalid-feedback">
                 Le mot de passe n'est pas assez robuste : Au moins 8 caractères, comprenant au moins une minuscule, une majuscule, un chiffre, et un caractère spécial
             </div>
+
+#GESTION DE LA CONNEXION (phase test  - sans BDD)
+Création de la page "signin.js" pour gérer la connexion = 
+
+⚠️ Le fichier JS est une page JS, il faut donc l'ajouter en 4ème arguments dans le fichier "allRoutes.js"
+ sur la ligne "new Route" lié à la page HTML en question = 
+
+    new Route("/signin", "Connexion", "pages/auth/signin.html", "js/auth/signin.js"),
+
+    
