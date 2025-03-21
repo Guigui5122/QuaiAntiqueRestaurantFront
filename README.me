@@ -335,6 +335,22 @@ Création de la page "signin.js" pour gérer la connexion =
 ⚠️ Le fichier JS est une page JS, il faut donc l'ajouter en 4ème arguments dans le fichier "allRoutes.js"
  sur la ligne "new Route" lié à la page HTML en question = 
 
-    new Route("/signin", "Connexion", "pages/auth/signin.html", "js/auth/signin.js"),
+        👉 new Route("/signin", "Connexion", "pages/auth/signin.html", "js/auth/signin.js"),
 
-    
+    1/ Vérification que l'email et mot de passe sont celui de l'utilisateur (déjà inscrit)
+    2/ Ajout de l'id="btnSignin" dans le code HTML du formulaire de connexion
+    3/ Ajout d'un evenement lors du click sur le bouton de connexion 
+      
+        👉btnSignin.addEventListener("click", checkCredentials);
+
+    4/ Création de la function "checkCredentials" qui récupère un Token de connexion, affiche un message "Vous êtes connecté", active ou désactive le btnSignin, et 
+      redirige l'utilisateur sur la page accueil si OK !
+
+
+#GESTION DES COOKIES      
+- Création de la page "script.js"
+- Ajout de <script src="JS/script.js"></script> dans la page index.html
+- Création des fonctions setToken et getToken;
+- Ajout des fonctions "cookies" pré-construit (cours Studi)
+- Création de la fonction "isConnected" pour informer l'utilisateur s'il est connecté ou non,
+  en affichant un message selon si le token a bien été récupéré ou non.
