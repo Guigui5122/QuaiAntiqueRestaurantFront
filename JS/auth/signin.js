@@ -11,7 +11,7 @@ function checkCredentials(){
         const token = "vhjjkljhgvjhjklmmjhgcvjkliifhbm!ilyfghuigyhbml,jh";
         setToken(token);
         //placer ce token en cookie
-
+        setCookie(RoleCookieName, "client", 7);
         window.location.replace("/"); // redirection vers la page d'accueil si la connexion est ok !
     }
     else{

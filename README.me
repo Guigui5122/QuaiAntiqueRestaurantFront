@@ -354,3 +354,73 @@ Création de la page "signin.js" pour gérer la connexion =
 - Ajout des fonctions "cookies" pré-construit (cours Studi)
 - Création de la fonction "isConnected" pour informer l'utilisateur s'il est connecté ou non,
   en affichant un message selon si le token a bien été récupéré ou non.
+
+
+#GESTION DE LA DECONNEXION
+- Ajout d'un bouton "Déconnexion" avec un ID dans la page index.html =
+
+            <li class="nav-item">
+              <button class="nav-link" id="signout-btn">Déconnexion</button>
+            </li>
+
+- Ensuite, dans SCRIPT.JS, nous implémentons la fonction de déconnexion avec l'ajout d'une constante "signoutBtn",
+ un évènement sur le bouton "signout-btn" =
+
+          const signoutBtn = document.getElementById("signout-btn");
+
+          signoutBtn.addEventListener("click", signout);
+
+          function signout(){
+              eraseCookie(tokenCookieName);
+             window.location.reload();
+          }
+
+#GESTION DES RÔLES (Admin, Client, connecté, deconnecté)
+Dans "signin.js" on ajoute dans la fonction "checkCredentials" :
+
+  👉  setCookie(RoleCookieName, "admin", 7); // 7 pour définir 7 jours la durée de vie du cookie.
+
+Dans "script.js" on ajoute :
+
+  👉  const RoleCookieName = "role";
+    
+  👉  eraseCookie(RoleCookieName);  // dans la fonction "Signout"
+
+Puis, on crée une function "showAndHideElementsForRoles" pour afficher ou masquer les élements en fonction du rôle. 
+Le client ne doit pas voir les boutons "Gérer la carte", ou "Ajouter une photo", etc...
+
+//La fonction ci-dessous utilise la boucle "forEach" et est suivie de "Case" pour chaque cas, la fonction vérifie si
+on est connecté / déconnecté / client ou Admin
+// "d-none" 
+
+👉function showAndHideElementsForRoles(){
+      const userConnected = isConnected();
+      const role = getRole();
+
+    let allElementsToEdit = document.querySelectorAll('[data-show]');
+
+    allElementsToEdit.forEach(element =>{
+        switch(element.dataset.show){
+            case 'disconnected':
+                if(userConnected){
+                    element.classList.add("d-none");
+                }
+                break;
+            case 'connected':
+                if(!userConnected){
+                    element.classList.add("d-none");
+                }
+                break;
+            case 'admin':
+                if(!userConnected || role != "admin"){
+                    element.classList.add("d-none");
+                }
+                break;
+            case 'client':
+                if(!userConnected || role != "client"){
+                    element.classList.add("d-none");
+                }
+                break;
+        }
+    })
+}
